@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>HOMIES</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -10,50 +14,132 @@
 <header class="header">
   <div class="logo">HOMIES</div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="coleccion.html">Collection</a>
+    <a href="index.html">Inicio</a>
+    <a href="coleccion.html">Colección</a>
   </nav>
 </header>
 
+<!-- HERO / CARRUSEL -->
 <section class="hero-carousel">
-  <div class="slide active" style="background-image:url('img/carrusel.jpg')">
+  <div class="slide active" style="background-image:url('img/carrusel1.jpg')">
     <div class="slide-content">
-      <h1>Nueva Colección</h1>
-      <p>Aquí el tiempo se mueve distinto.</p>
-      <a href="coleccion.html" class="button light">Explorar colección</a>
+      <h1>Aquí el tiempo se mueve distinto</h1>
+      <p>Streetwear nacido en Barranquilla</p>
     </div>
   </div>
 
-  <div class="slide" style="background-image:url('img/carn.jpg')"></div>
-  <div class="slide" style="background-image:url('img/otra.jpg')"></div>
+  <div class="slide" style="background-image:url('img/carrusel2.jpg')">
+    <div class="slide-content">
+      <h1>¿Quiénes somos?</h1>
+      <p>Diseño, cultura y calle reinterpretados</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('img/carrusel3.jpg')">
+    <div class="slide-content">
+      <h1>Lo que vendemos</h1>
+      <p>Prendas, totebags y objetos gráficos</p>
+    </div>
+  </div>
 </section>
 
-<section class="section manifesto">
-  <h2>Diseño. Cultura. Calle.</h2>
+<!-- CATEGORÍAS -->
+<section class="categories">
+  <div class="category-card">Tote Bags</div>
+  <div class="category-card">Gorras</div>
+  <div class="category-card">Prendas</div>
+</section>
+
+<!-- ANUNCIO -->
+<section class="promo">
+  NUEVA COLECCIÓN DISPONIBLE · ENVÍOS A TODO COLOMBIA
+</section>
+
+<!-- MANIFIESTO -->
+<section class="manifesto">
+  <h2>No seguimos tradiciones.<br>Las reinterpretamos.</h2>
   <p>
-    HOMIES nace en Barranquilla, pero no se viste de folclor.
-    Se viste de identidad gráfica y ritmo contemporáneo.
+    HOMIES nace en Barranquilla, no como folclor,
+    sino como cultura viva convertida en moda.
   </p>
 </section>
 
-<footer class="footer-editorial">
-  <div class="footer-line"></div>
-  <div class="footer-content">
-    <span>HOMIES</span>
-    <span>© 2026</span>
-    <span>Instagram</span>
-  </div>
+<footer class="footer">
+  <p>© 2026 HOMIES · Streetwear colombiano</p>
 </footer>
 
-<script>
-  const slides = document.querySelectorAll('.slide');
-  let index = 0;
-  setInterval(() => {
-    slides[index].classList.remove('active');
-    index = (index + 1) % slides.length;
-    slides[index].classList.add('active');
-  }, 3000);
-</script>
+<script src="js/app.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>HOMIES</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">HOMIES</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="coleccion.html">Colección</a>
+  </nav>
+</header>
+
+<!-- HERO / CARRUSEL -->
+<section class="hero-carousel">
+  <div class="slide active" style="background-image:url('img/carrusel1.jpg')">
+    <div class="slide-content">
+      <h1>Aquí el tiempo se mueve distinto</h1>
+      <p>Streetwear nacido en Barranquilla</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('img/carrusel2.jpg')">
+    <div class="slide-content">
+      <h1>¿Quiénes somos?</h1>
+      <p>Diseño, cultura y calle reinterpretados</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('img/carrusel3.jpg')">
+    <div class="slide-content">
+      <h1>Lo que vendemos</h1>
+      <p>Prendas, totebags y objetos gráficos</p>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORÍAS -->
+<section class="categories">
+  <div class="category-card">Tote Bags</div>
+  <div class="category-card">Gorras</div>
+  <div class="category-card">Prendas</div>
+</section>
+
+<!-- ANUNCIO -->
+<section class="promo">
+  NUEVA COLECCIÓN DISPONIBLE · ENVÍOS A TODO COLOMBIA
+</section>
+
+<!-- MANIFIESTO -->
+<section class="manifesto">
+  <h2>No seguimos tradiciones.<br>Las reinterpretamos.</h2>
+  <p>
+    HOMIES nace en Barranquilla, no como folclor,
+    sino como cultura viva convertida en moda.
+  </p>
+</section>
+
+<footer class="footer">
+  <p>© 2026 HOMIES · Streetwear colombiano</p>
+</footer>
+
+<script src="js/app.js"></script>
 </body>
 </html>
