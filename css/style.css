@@ -1,110 +1,321 @@
+/* -------------------
+   VARIABLES DE MARCA
+-------------------- */
 :root {
-  --black:#111;
-  --white:#fff;
-  --accent:#e10600;
-  --radius:20px;
+  --red: #D13916;
+  --yellow: #EEE42D;
+  --black: #0f0f0f;
+  --gray: #777;
+  --bg: #fafafa;
 }
 
+/* -------------------
+   RESET + BASE
+-------------------- */
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Inter, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background:#fff;
-  color:#111;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--black);
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* -------------------
+   HEADER / NAV
+-------------------- */
 .header {
-  position:fixed;
-  top:20px;
-  left:50%;
-  transform:translateX(-50%);
-  width:calc(100% - 120px);
-  padding:16px 32px;
-  background:rgba(255,255,255,.8);
-  backdrop-filter:blur(10px);
-  border-radius:999px;
-  display:flex;
-  justify-content:space-between;
-  z-index:1000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 8%;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: var(--red);
 }
 
 nav a {
-  margin-left:28px;
-  font-size:14px;
-  opacity:.7;
+  margin-left: 30px;
+  font-weight: 500;
+  position: relative;
 }
 
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  bottom: -6px;
+  left: 0;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* -------------------
+   HERO / CARRUSEL
+-------------------- */
 .hero-carousel {
-  height:100vh;
-  position:relative;
+  margin-top: 70px;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .slide {
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transition:1s;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background-size: cover;
+  background-position: center;
 }
 
-.slide.active { opacity:1 }
+.slide.active {
+  opacity: 1;
+}
 
 .slide::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.3);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
 }
 
 .slide-content {
-  position:absolute;
-  bottom:80px;
-  left:80px;
-  color:white;
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  z-index: 2;
+  max-width: 500px;
 }
 
-.button {
-  display:inline-block;
-  padding:12px 26px;
-  border-radius:999px;
-  border:1px solid white;
-  margin-top:20px;
+.slide-content h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3.2rem;
+  color: white;
+  line-height: 1.1;
 }
 
-.section {
-  padding:140px 80px;
+.slide-content p {
+  margin-top: 15px;
+  color: #f1f1f1;
+  font-size: 1rem;
 }
 
-.collection-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-  padding:80px;
+/* -------------------
+   CATEGORIES
+-------------------- */
+.categories {
+  display: flex;
+  gap: 30px;
+  padding: 120px 8%;
 }
 
-.product-card img {
-  width:100%;
-  border-radius:20px;
-  transition:.4s;
+.category-card {
+  flex: 1;
+  background: var(--black);
+  color: white;
+  padding: 80px 30px;
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  transition: 0.3s;
 }
 
-.product-card:hover img {
-  transform:scale(1.05);
+.category-card:nth-child(2) {
+  background: var(--red);
 }
 
-.product-page {
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:80px;
-  padding:160px 80px;
+.category-card:nth-child(3) {
+  background: var(--yellow);
+  color: black;
 }
 
-.product-gallery img {
-  width:100%;
-  border-radius:20px;
+.category-card:hover {
+  transform: translateY(-8px);
+}
+
+/* -------------------
+   PROMO STRIP
+-------------------- */
+.promo {
+  background: var(--red);
+  color: white;
+  padding: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+/* -------------------
+   MANIFESTO
+-------------------- */
+.manifesto {
+  padding: 140px 8%;
+  text-align: center;
+}
+
+.manifesto h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.manifesto p {
+  margin-top: 25px;
+  max-width: 600px;
+  margin-inline: auto;
+  color: var(--gray);
+}
+
+/* -------------------
+   COLECCIÓN
+-------------------- */
+.collection {
+  padding: 140px 8%;
+}
+
+.collection h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 60px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card h3 {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.product-card p {
+  color: var(--red);
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* -------------------
+   PRODUCT DETAIL
+-------------------- */
+.product-detail {
+  padding: 140px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.product-detail h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+}
+
+.product-detail p {
+  color: var(--red);
+  font-size: 1.2rem;
+  margin: 15px 0;
+}
+
+.product-detail label {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+.product-detail select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.product-detail button {
+  margin-top: 30px;
+  padding: 15px;
+  width: 100%;
+  background: var(--black);
+  color: white;
+  border: none;
+  font-family: 'Anton', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.product-detail button:hover {
+  background: var(--red);
+}
+
+/* -------------------
+   FOOTER
+-------------------- */
+.footer {
+  margin-top: 140px;
+  padding: 40px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+/* -------------------
+   RESPONSIVE
+-------------------- */
+@media (max-width: 900px) {
+  .categories {
+    flex-direction: column;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .slide-content h1 {
+    font-size: 2.2rem;
+  }
 }
