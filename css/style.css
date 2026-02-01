@@ -1,17 +1,15 @@
-/* -------------------
-   VARIABLES DE MARCA
--------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap');
+
 :root {
   --red: #D13916;
   --yellow: #EEE42D;
-  --black: #0f0f0f;
-  --gray: #777;
-  --bg: #fafafa;
+  --black: #111;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --radius: 18px;
 }
 
-/* -------------------
-   RESET + BASE
--------------------- */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -20,8 +18,9 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
+  background: var(--white);
   color: var(--black);
+  padding-top: 90px;
 }
 
 a {
@@ -29,73 +28,59 @@ a {
   color: inherit;
 }
 
-img {
-  width: 100%;
-  display: block;
-}
+/* ================= HEADER ================= */
 
-/* -------------------
-   HEADER / NAV
--------------------- */
 .header {
   position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  padding: 0 8%;
-  background: rgba(255,255,255,0.95);
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 80px);
+  max-width: 1400px;
+  padding: 18px 32px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  z-index: 999;
-  border-bottom: 1px solid #eee;
+  align-items: center;
+  z-index: 1000;
 }
 
 .logo {
   font-family: 'Anton', sans-serif;
-  font-size: 1.8rem;
   letter-spacing: 2px;
+  font-size: 22px;
   color: var(--red);
 }
 
 nav a {
-  margin-left: 30px;
+  margin-left: 28px;
+  font-size: 14px;
   font-weight: 500;
-  position: relative;
+  opacity: 0.7;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: var(--red);
-  bottom: -6px;
-  left: 0;
-  transition: 0.3s;
+nav a:hover {
+  opacity: 1;
+  color: var(--red);
 }
 
-nav a:hover::after {
-  width: 100%;
-}
+/* ================= HERO / CARRUSEL ================= */
 
-/* -------------------
-   HERO / CARRUSEL
--------------------- */
 .hero-carousel {
-  margin-top: 70px;
-  height: 90vh;
   position: relative;
+  height: 100vh;
   overflow: hidden;
 }
 
 .slide {
   position: absolute;
   inset: 0;
-  opacity: 0;
-  transition: opacity 1s ease;
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
 }
 
 .slide.active {
@@ -111,211 +96,212 @@ nav a:hover::after {
 
 .slide-content {
   position: absolute;
-  bottom: 15%;
+  bottom: 80px;
   left: 8%;
+  max-width: 520px;
+  color: white;
   z-index: 2;
-  max-width: 500px;
 }
 
 .slide-content h1 {
   font-family: 'Anton', sans-serif;
-  font-size: 3.2rem;
-  color: white;
-  line-height: 1.1;
+  font-size: 56px;
+  margin-bottom: 16px;
 }
 
 .slide-content p {
-  margin-top: 15px;
-  color: #f1f1f1;
-  font-size: 1rem;
+  font-size: 16px;
+  margin-bottom: 24px;
+  opacity: 0.9;
 }
 
-/* -------------------
-   CATEGORIES
--------------------- */
-.categories {
-  display: flex;
-  gap: 30px;
-  padding: 120px 8%;
+.button {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid var(--black);
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
-.category-card {
-  flex: 1;
-  background: var(--black);
+.button.light {
+  border-color: white;
   color: white;
-  padding: 80px 30px;
-  font-family: 'Anton', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  transition: 0.3s;
 }
 
-.category-card:nth-child(2) {
-  background: var(--red);
-}
-
-.category-card:nth-child(3) {
-  background: var(--yellow);
+.button.light:hover {
+  background: white;
   color: black;
 }
 
-.category-card:hover {
-  transform: translateY(-8px);
+/* ================= SECTIONS ================= */
+
+.section {
+  padding: 120px 8%;
 }
 
-/* -------------------
-   PROMO STRIP
--------------------- */
-.promo {
-  background: var(--red);
-  color: white;
-  padding: 18px;
-  text-align: center;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-}
-
-/* -------------------
-   MANIFESTO
--------------------- */
 .manifesto {
-  padding: 140px 8%;
   text-align: center;
 }
 
 .manifesto h2 {
   font-family: 'Anton', sans-serif;
-  font-size: 3rem;
-  line-height: 1.2;
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 
 .manifesto p {
-  margin-top: 25px;
-  max-width: 600px;
-  margin-inline: auto;
-  color: var(--gray);
+  max-width: 650px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.7;
 }
 
-/* -------------------
-   COLECCIÓN
--------------------- */
-.collection {
-  padding: 140px 8%;
-}
+/* ================= COLLECTION GRID ================= */
 
-.collection h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 3rem;
-  margin-bottom: 60px;
-}
-
-.products-grid {
+.collection-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 40px;
+  padding: 100px 8%;
 }
 
 .product-card {
-  border: 1px solid #eee;
-  padding: 15px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-}
-
-.product-card h3 {
-  margin-top: 15px;
-  font-size: 1rem;
-}
-
-.product-card p {
-  color: var(--red);
-  font-weight: 600;
-  margin-top: 5px;
-}
-
-/* -------------------
-   PRODUCT DETAIL
--------------------- */
-.product-detail {
-  padding: 140px 8%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-}
-
-.product-detail h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 2.5rem;
-}
-
-.product-detail p {
-  color: var(--red);
-  font-size: 1.2rem;
-  margin: 15px 0;
-}
-
-.product-detail label {
   display: block;
-  margin-top: 20px;
-  font-size: 0.8rem;
 }
 
-.product-detail select {
+.product-image {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--gray);
 }
 
-.product-detail button {
-  margin-top: 30px;
-  padding: 15px;
+.product-image img {
   width: 100%;
-  background: var(--black);
-  color: white;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+.product-info {
+  margin-top: 14px;
+}
+
+.product-info h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.product-info span {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* ================= PRODUCT PAGE ================= */
+
+.product-page {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  padding: 120px 8%;
+}
+
+.product-gallery img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
   border: none;
-  font-family: 'Anton', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 2px;
+  font-size: 22px;
+  padding: 12px;
   cursor: pointer;
 }
 
-.product-detail button:hover {
+.product-details h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 36px;
+}
+
+.price {
+  font-size: 22px;
+  margin: 20px 0;
+  display: block;
+}
+
+.options p {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.sizes button {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.color {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.color.black { background: black; }
+.color.white { background: white; }
+
+.buy-btn {
+  margin-top: 30px;
+  padding: 14px;
+  width: 100%;
+  border: none;
   background: var(--red);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/* -------------------
-   FOOTER
--------------------- */
-.footer {
-  margin-top: 140px;
-  padding: 40px;
-  border-top: 1px solid #eee;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--gray);
+/* ================= FOOTER ================= */
+
+.footer-editorial {
+  padding: 80px 8%;
 }
 
-/* -------------------
-   RESPONSIVE
--------------------- */
+.footer-line {
+  height: 1px;
+  background: #eee;
+  margin-bottom: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
-  .categories {
-    flex-direction: column;
-  }
-
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .product-detail {
+  .product-page {
     grid-template-columns: 1fr;
   }
 
   .slide-content h1 {
-    font-size: 2.2rem;
+    font-size: 40px;
   }
 }
