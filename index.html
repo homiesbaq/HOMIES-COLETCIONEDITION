@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>HOMIES</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">HOMIES</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="coleccion.html">Collection</a>
+  </nav>
+</header>
+
+<section class="hero-carousel">
+  <div class="slide active" style="background-image:url('img/carrusel.jpg')">
+    <div class="slide-content">
+      <h1>Nueva Colección</h1>
+      <p>Aquí el tiempo se mueve distinto.</p>
+      <a href="coleccion.html" class="button light">Explorar colección</a>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('img/carn.jpg')"></div>
+  <div class="slide" style="background-image:url('img/otra.jpg')"></div>
+</section>
+
+<section class="section manifesto">
+  <h2>Diseño. Cultura. Calle.</h2>
+  <p>
+    HOMIES nace en Barranquilla, pero no se viste de folclor.
+    Se viste de identidad gráfica y ritmo contemporáneo.
+  </p>
+</section>
+
+<footer class="footer-editorial">
+  <div class="footer-line"></div>
+  <div class="footer-content">
+    <span>HOMIES</span>
+    <span>© 2026</span>
+    <span>Instagram</span>
+  </div>
+</footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
+  setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 3000);
+</script>
+
+</body>
+</html>
