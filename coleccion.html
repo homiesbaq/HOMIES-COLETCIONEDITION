@@ -2,7 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>HOMIES — Collection</title>
+  <title>Colección | HOMIES</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -10,55 +12,21 @@
 <header class="header">
   <div class="logo">HOMIES</div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="coleccion.html">Collection</a>
+    <a href="index.html">Inicio</a>
+    <a href="coleccion.html">Colección</a>
   </nav>
 </header>
 
-<section class="hero-carousel small">
-  <div class="slide active" style="background-image:url('img/collection-hero.jpg')">
-    <div class="slide-content">
-      <h1>DROP 01</h1>
-      <p>Carnaval Editorial</p>
-    </div>
-  </div>
+<section class="collection">
+  <h1>Nueva Colección</h1>
+  <div class="products-grid" id="products-grid"></div>
 </section>
 
-<section class="section collection-header">
-  <h2>DROP 01 — Carnaval Editorial</h2>
-  <p>Estampados que reinterpretan el carnaval desde una mirada gráfica y urbana.</p>
-</section>
-
-<section class="collection-grid">
-
-  <a href="product.html?id=homies-tee" class="product-card">
-    <img src="img/h1.jpg">
-    <h3>Homies Tee</h3>
-    <span>$120.000 COP</span>
-  </a>
-
-  <a href="product.html?id=street-cap" class="product-card">
-    <img src="img/cap.jpg">
-    <h3>Street Cap</h3>
-    <span>$90.000 COP</span>
-  </a>
-
-  <a href="product.html?id=tote-black" class="product-card">
-    <img src="img/tote.jpg">
-    <h3>Tote Bag</h3>
-    <span>$70.000 COP</span>
-  </a>
-
-</section>
-
-<footer class="footer-editorial">
-  <div class="footer-line"></div>
-  <div class="footer-content">
-    <span>HOMIES</span>
-    <span>© 2026</span>
-    <span>Instagram</span>
-  </div>
+<footer class="footer">
+  <p>© 2026 HOMIES</p>
 </footer>
 
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
